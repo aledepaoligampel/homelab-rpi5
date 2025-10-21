@@ -1,0 +1,75 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  # Prometheus se monitorea a sí mismo
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Node Exporter para métricas del sistema
+  - job_name: "node-exporter"
+    static_configs:
+      - targets: ["node-exporter:9100"]
+    scrape_interval: 5s
+    metrics_path: /metrics
+
+  # Docker daemon metrics
+  - job_name: "docker"
+    static_configs:
+      - targets: ["host.docker.internal:9323"]
+    scrape_interval: 5s
+
+  # Portainer metrics
+  - job_name: "portainer"
+    static_configs:
+      - targets: ["portainer:9000"]
+    scrape_interval: 30s
+    metrics_path: /api/endpoints/1/docker/api/v1.24/system/df
+
+  # Home Assistant metrics
+  - job_name: "homeassistant"
+    static_configs:
+      - targets: ["homeassistant:8123"]
+    scrape_interval: 30s
+    metrics_path: /api/prometheus
+
+  # AdGuard Home metrics
+  - job_name: "adguard"
+    static_configs:
+      - targets: ["adguardhome:3000"]
+    scrape_interval: 30s
+    metrics_path: /control/stats
+
+  # Nginx Proxy Manager metrics
+  - job_name: "npm"
+    static_configs:
+      - targets: ["nginx-proxy-manager:81"]
+    scrape_interval: 30s
+    metrics_path: /api/metrics
+
+  # Immich metrics
+  - job_name: "immich"
+    static_configs:
+      - targets: ["immich-server:2283"]
+    scrape_interval: 30s
+    metrics_path: /api/metrics
+
+  # Transmission metrics
+  - job_name: "transmission"
+    static_configs:
+      - targets: ["transmission:9091"]
+    scrape_interval: 30s
+    metrics_path: /transmission/rpc
+
+  # Stremio metrics
+  - job_name: "stremio"
+    static_configs:
+      - targets: ["stremio:11470"]
+    scrape_interval: 30s
+    metrics_path: /metrics
