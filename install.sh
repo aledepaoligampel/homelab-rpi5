@@ -309,6 +309,8 @@ configure_firewall() {
     sudo ufw allow 8123/tcp  # Home Assistant
     sudo ufw allow 3000/tcp  # AdGuard Home
     sudo ufw allow 3001/tcp  # AdGuard Home
+    sudo ufw allow 53/tcp    # AdGuard Home DNS
+    sudo ufw allow 53/udp    # AdGuard Home DNS
     sudo ufw allow 9091/tcp  # Transmission
     sudo ufw allow 11470/tcp # Stremio
     sudo ufw allow 2283/tcp  # Immich
