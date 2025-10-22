@@ -180,7 +180,7 @@ services:
     container_name: nginx-proxy-manager
     restart: unless-stopped
     ports:
-      - "8080:80"
+      - "80:80"
       - "81:81"
       - "443:443"
     volumes:
@@ -218,7 +218,7 @@ services:
     container_name: stremio
     restart: unless-stopped
     ports:
-      - "8081:8080"
+      - "8080:8080"
     volumes:
       - /mnt/nvme/stremio/config:/root/.stremio-server
     networks:
@@ -282,8 +282,8 @@ services:
     container_name: dokploy
     restart: unless-stopped
     ports:
-      - "80:3000"
       - "3000:3000"
+      - "3001:3001"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /mnt/nvme/dokploy:/app/data

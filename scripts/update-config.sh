@@ -133,12 +133,12 @@ show_access_info() {
     echo "=========================================="
     echo
     echo "🆕 NUEVOS SERVICIOS:"
-    echo "   Dokploy:              http://$(hostname -I | awk '{print $1}'):80"
+    echo "   Dokploy:              http://$(hostname -I | awk '{print $1}'):3000"
     echo
     echo "🔄 SERVICIOS CON PUERTOS ACTUALIZADOS:"
-    echo "   Nginx Proxy Manager:  http://$(hostname -I | awk '{print $1}'):8080 (antes: 80)"
-    echo "   Stremio:              http://$(hostname -I | awk '{print $1}'):8081 (antes: 8080)"
-    echo "   AdGuard Home:        http://$(hostname -I | awk '{print $1}'):3001 (antes: 3000)"
+    echo "   Nginx Proxy Manager:  http://$(hostname -I | awk '{print $1}'):80 (puerto estándar)"
+    echo "   Stremio:              http://$(hostname -I | awk '{print $1}'):8080 (puerto estándar)"
+    echo "   AdGuard Home:        http://$(hostname -I | awk '{print $1}'):3000 (puerto estándar)"
     echo
     echo "📋 SERVICIOS SIN CAMBIOS:"
     echo "   Portainer:            http://$(hostname -I | awk '{print $1}'):9000"
