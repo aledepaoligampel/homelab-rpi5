@@ -10,15 +10,17 @@ This document lists all ports used by the homelab services to ensure no conflict
 | **Immich**              | 2283  | TCP      | Photo/video management      |
 | **Home Assistant**      | 8123  | TCP      | Home automation             |
 | **AdGuard Home**        | 53    | TCP/UDP  | DNS server                  |
-| **AdGuard Home**        | 3000  | TCP      | Web interface               |
+| **AdGuard Home**        | 3001  | TCP      | Web interface               |
 | **Samba**               | 139   | TCP      | SMB protocol                |
 | **Samba**               | 445   | TCP      | SMB protocol                |
-| **Nginx Proxy Manager** | 80    | TCP      | HTTP                        |
+| **Nginx Proxy Manager** | 8080  | TCP      | HTTP                        |
 | **Nginx Proxy Manager** | 81    | TCP      | Admin interface             |
 | **Nginx Proxy Manager** | 443   | TCP      | HTTPS                       |
-| **Stremio**             | 11470 | TCP      | Media streaming             |
+| **Stremio**             | 8081  | TCP      | Media streaming             |
 | **Transmission**        | 9091  | TCP      | Web interface               |
 | **Transmission**        | 51413 | TCP/UDP  | BitTorrent                  |
+| **Dokploy**             | 80    | TCP      | Web interface               |
+| **Dokploy**             | 3000  | TCP      | Application server          |
 
 ## Port Verification
 
@@ -31,10 +33,11 @@ The following ports are reserved for system services and should not be used:
 - **22**: SSH
 - **25**: SMTP
 - **53**: DNS (used by AdGuard Home)
-- **80**: HTTP (used by Nginx Proxy Manager)
+- **80**: HTTP (used by Dokploy)
 - **443**: HTTPS (used by Nginx Proxy Manager)
 - **139**: SMB (used by Samba)
 - **445**: SMB (used by Samba)
+- **3000**: Application server (used by Dokploy)
 
 ## Network Configuration
 
@@ -49,15 +52,16 @@ The installation script automatically configures UFW firewall with the following
 sudo ufw allow ssh
 
 # Allow homelab services
-sudo ufw allow 80/tcp
+sudo ufw allow 80/tcp    # Dokploy
 sudo ufw allow 443/tcp
-sudo ufw allow 9000/tcp  # Portainer
-sudo ufw allow 8123/tcp  # Home Assistant
-sudo ufw allow 3000/tcp  # AdGuard Home
-sudo ufw allow 3001/tcp  # AdGuard Home (if needed)
-sudo ufw allow 9091/tcp  # Transmission
-sudo ufw allow 11470/tcp # Stremio
-sudo ufw allow 2283/tcp  # Immich
+sudo ufw allow 8080/tcp # Nginx Proxy Manager
+sudo ufw allow 9000/tcp # Portainer
+sudo ufw allow 8123/tcp # Home Assistant
+sudo ufw allow 3000/tcp # Dokploy
+sudo ufw allow 3001/tcp # AdGuard Home
+sudo ufw allow 9091/tcp # Transmission
+sudo ufw allow 8081/tcp # Stremio
+sudo ufw allow 2283/tcp # Immich
 ```
 
 ## Troubleshooting Port Issues

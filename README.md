@@ -48,6 +48,29 @@ chmod +x configure-services.sh
 docker-compose up -d
 ```
 
+### 6. Install Dokploy (Optional)
+
+```bash
+chmod +x scripts/install-dokploy.sh
+./scripts/install-dokploy.sh
+```
+
+## 🔄 Updating Your Homelab
+
+### For Configuration Updates (New Services, Port Changes)
+
+```bash
+chmod +x scripts/update-config.sh
+./scripts/update-config.sh
+```
+
+### For System Updates (OS, Docker, Containers)
+
+```bash
+chmod +x scripts/update.sh
+./scripts/update.sh
+```
+
 ## 📁 Project Structure
 
 ```
@@ -80,6 +103,7 @@ homelab-rpi5/
 - **Nginx Proxy Manager**: Reverse proxy and SSL
 - **Stremio**: Media streaming server
 - **Transmission**: BitTorrent client
+- **Dokploy**: Docker deployment platform
 
 ## 🌐 Service URLs
 
@@ -87,11 +111,12 @@ After installation, services will be available at your configured IP address:
 
 - **Portainer**: http://YOUR_IP:9000
 - **Home Assistant**: http://YOUR_IP:8123
-- **AdGuard Home**: http://YOUR_IP:3000
+- **AdGuard Home**: http://YOUR_IP:3001
 - **Nginx Proxy Manager**: http://YOUR_IP:81
 - **Immich**: http://YOUR_IP:2283
 - **Transmission**: http://YOUR_IP:9091
-- **Stremio**: http://YOUR_IP:8080
+- **Dokploy**: http://YOUR_IP:80
+- **Stremio**: http://YOUR_IP:8081
 
 ## 🔧 Configuration
 

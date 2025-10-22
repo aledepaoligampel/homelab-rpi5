@@ -215,7 +215,7 @@ show_update_info() {
     echo "✅ Updated:"
     echo "   - Operating system"
     echo "   - Docker"
-    echo "   - Docker containers"
+    echo "   - Docker containers (including Dokploy)"
     echo "   - Docker Compose"
     echo
     echo "🧹 Cleanup performed:"
