@@ -133,7 +133,7 @@ show_access_info() {
     echo "=========================================="
     echo
     echo "🆕 NUEVOS SERVICIOS:"
-    echo "   Dokploy:              http://$(hostname -I | awk '{print $1}'):3000"
+    echo "   Dokploy:              http://$(hostname -I | awk '{print $1}'):3002"
     echo
     echo "🔄 SERVICIOS CON PUERTOS ACTUALIZADOS:"
     echo "   Nginx Proxy Manager:  http://$(hostname -I | awk '{print $1}'):80 (puerto estándar)"

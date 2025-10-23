@@ -19,7 +19,7 @@ This document lists all ports used by the homelab services to ensure no conflict
 | **Stremio**             | 8080  | TCP      | Media streaming             |
 | **Transmission**        | 9091  | TCP      | Web interface               |
 | **Transmission**        | 51413 | TCP/UDP  | BitTorrent                  |
-| **Dokploy**             | 3000  | TCP      | Web interface               |
+| **Dokploy**             | 3002  | TCP      | Web interface               |
 | **Dokploy**             | 3001  | TCP      | Application server          |
 
 ## Port Verification
@@ -37,7 +37,8 @@ The following ports are reserved for system services and should not be used:
 - **443**: HTTPS (used by Nginx Proxy Manager)
 - **139**: SMB (used by Samba)
 - **445**: SMB (used by Samba)
-- **3000**: Web interface (used by AdGuard Home and Dokploy)
+- **3000**: Web interface (used by AdGuard Home)
+- **3002**: Web interface (used by Dokploy)
 
 ## Network Configuration
 
@@ -56,8 +57,9 @@ sudo ufw allow 80/tcp    # Nginx Proxy Manager
 sudo ufw allow 443/tcp
 sudo ufw allow 9000/tcp # Portainer
 sudo ufw allow 8123/tcp # Home Assistant
-sudo ufw allow 3000/tcp # AdGuard Home & Dokploy
+sudo ufw allow 3000/tcp # AdGuard Home
 sudo ufw allow 3001/tcp # Dokploy
+sudo ufw allow 3002/tcp # Dokploy
 sudo ufw allow 9091/tcp # Transmission
 sudo ufw allow 8080/tcp # Stremio
 sudo ufw allow 2283/tcp # Immich

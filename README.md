@@ -115,7 +115,7 @@ After installation, services will be available at your configured IP address:
 - **Nginx Proxy Manager**: http://YOUR_IP:81
 - **Immich**: http://YOUR_IP:2283
 - **Transmission**: http://YOUR_IP:9091
-- **Dokploy**: http://YOUR_IP:3000
+- **Dokploy**: http://YOUR_IP:3002
 - **Stremio**: http://YOUR_IP:8080
 
 ## 🔧 Configuration

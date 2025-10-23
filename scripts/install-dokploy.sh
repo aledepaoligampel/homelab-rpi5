@@ -70,11 +70,11 @@ sleep 10
 # Verificar que el servicio está ejecutándose
 if docker-compose ps dokploy | grep -q "Up"; then
     print_status "✅ Dokploy se ha instalado correctamente!"
-    print_status "🌐 Accede a Dokploy en: http://tu-ip:3000"
+    print_status "🌐 Accede a Dokploy en: http://tu-ip:3002"
     print_status "🔧 O usando el dominio: http://dokploy.${DOMAIN:-localhost}"
     print_status ""
     print_status "📋 Información importante:"
-    print_status "   - Puerto 3000: Interfaz web de Dokploy"
+    print_status "   - Puerto 3002: Interfaz web de Dokploy"
     print_status "   - Puerto 3001: Servidor de aplicación de Dokploy"
     print_status "   - Datos almacenados en: /mnt/nvme/dokploy"
     print_status ""
