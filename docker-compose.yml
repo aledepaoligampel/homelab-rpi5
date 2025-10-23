@@ -119,21 +119,13 @@ services:
     image: ghcr.io/home-assistant/home-assistant:stable
     container_name: homeassistant
     restart: unless-stopped
-    ports:
-      - "8123:8123"
+    network_mode: host
     volumes:
       - /mnt/nvme/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
-    networks:
-      - homelab-network
     environment:
       - TZ=${TIMEZONE}
     privileged: true
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.homeassistant.rule=Host(`homeassistant.${DOMAIN}`)"
-      - "traefik.http.routers.homeassistant.tls=true"
-      - "traefik.http.routers.homeassistant.tls.certresolver=letsencrypt"
 
   # AdGuard Home - DNS ad blocker
   adguardhome:

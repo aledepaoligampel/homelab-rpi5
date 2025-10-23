@@ -8,7 +8,7 @@ This document lists all ports used by the homelab services to ensure no conflict
 | ----------------------- | ----- | -------- | --------------------------- |
 | **Portainer**           | 9000  | TCP      | Docker management interface |
 | **Immich**              | 2283  | TCP      | Photo/video management      |
-| **Home Assistant**      | 8123  | TCP      | Home automation             |
+| **Home Assistant**      | 8123  | TCP      | Home automation (host mode) |
 | **AdGuard Home**        | 53    | TCP/UDP  | DNS server                  |
 | **AdGuard Home**        | 3000  | TCP      | Web interface               |
 | **Samba**               | 139   | TCP      | SMB protocol                |
