@@ -123,6 +123,8 @@ services:
     volumes:
       - /mnt/nvme/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+      - /dev:/dev
     environment:
       - TZ=${TIMEZONE}
     privileged: true
